@@ -1,0 +1,237 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+    min-height: 100%;
+    box-sizing: border-box;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+}
+
+header {
+    justify-self: flex-start;
+    margin: auto;
+}
+h1 {
+    color:hsl(183, 100%, 15%);
+    width: 50%;
+    margin-left: 25%;
+    word-wrap: break-word;
+}
+
+#calculator {
+    /* margin-top: auto; */
+    background: white;
+    min-height: 75vh;
+    width: 100%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 2rem; */
+    color: hsl(182, 26%, 40%);
+}
+
+input {
+    height: 2.5rem;
+    width: 100%;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85vw;
+    /* padding: 1rem; */
+}
+
+.bill-total {
+    margin: 1rem 0;
+
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-total label {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.tip-selector {
+    margin: 1rem 0;
+
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+}
+
+.button-grid {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    max-width: 100%;
+}
+
+.tip-button {
+    min-width: 45%;
+    height: 2rem;
+    margin: 0.5rem;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+    font-weight: 800;
+    font-family: 'Space Mono', monospace;
+}
+
+.tip-button.active {
+    transition: all ease-in-out 350ms;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.button-grid :nth-child(odd) {
+    margin-left: 0rem;
+}
+
+.button-grid :nth-child(even) {
+    margin-right: 0rem;
+}
+
+.button-grid :last-child {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(182, 26%, 40%);
+}
+
+.people-selector {
+    margin: 1rem 0;
+
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+}
+
+.people-selector label {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.outputs {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-start;
+    gap:1rem;
+    padding: 1rem;
+    width: 85vw;
+    min-height: 10rem;
+    border-radius: 1rem;
+    background-color: hsl(183, 100%, 15%);
+}
+
+.tip-total {
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.tip-total h2 {
+    color: white;
+}
+
+.tip-total p {
+    font-size: 2rem;
+    color: hsl(172, 67%, 45%);
+    overflow-x: hidden;
+}
+
+.cash-total {
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.cash-total h2 {
+    color:white;
+}
+
+.cash-total p {
+    font-size: 2rem;
+    color:hsl(172, 67%, 45%);
+    overflow-x: hidden;
+}
+
+.reset-button {
+    align-self: center;
+    margin-top: auto;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+    font-weight: 800;
+    font-family: 'Space Mono', monospace;
+    height: 2rem;
+    width: 100%;
+    background-color: hsl(182, 26%, 40%);
+    color: hsl(183, 100%, 15%);
+}
+
+.reset-button.enabled {
+    transition: all ease-in-out 350ms;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.reset-button.active {
+    transition: all ease-in-out 350ms;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
+}
+
+@media screen and (min-width: 50rem) {
+    #calculator {
+        flex-direction: row;
+        min-height: 20rem;
+        max-width: 40rem;
+        margin-bottom: auto;
+        height: 10rem;
+        border-radius: 2rem;
+        padding: 3rem;
+        justify-content: space-between;
+    }
+
+    .inputs {
+        height: 100%;
+        max-width: 45%;
+    }
+
+    .outputs {
+        height: 100%;
+        max-width: 45%;
+        overflow-x: hidden;
+    }
+}
