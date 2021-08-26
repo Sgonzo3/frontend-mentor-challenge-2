@@ -49,9 +49,13 @@ onClick for reset
     
     let tipOnClick = (event) => {
         selectedTip = +event.target.value;
-        console.log(selectedTip);
-        activeTip?.classList.remove("active");
+        console.log(selectedTip, activeTip, activeTip?.ariaPressed);
+        if (activeTip) {
+            activeTip.classList.remove("active");
+            activeTip.ariaPressed = false;    
+        }
         event.target.classList.toggle("active");
+        event.target.ariaPressed = true;
         activeTip = event.target;
         calculate();
     }
@@ -70,7 +74,7 @@ onClick for reset
         peopleInput = 1;
     
         billElement.value = billInput;
-        //activeTip?.classList.remove("active");
+        activeTip?.classList.remove("active");
         peopleElement.value = peopleInput;
         resetElement.classList.remove("enabled");
         calculate();
